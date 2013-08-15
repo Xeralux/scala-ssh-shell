@@ -25,10 +25,11 @@ class JLineIOReader(in: java.io.InputStream,
 
   lazy val completion = _completion
   lazy val history: JLineHistory = JLineHistory()
-  lazy val keyBindings =
-    try KeyBinding parse slurp(term.getDefaultBindings)
-    catch { case _: Exception => Nil }
-
+  //KeyBinding no longer exists
+  //lazy val keyBindings =
+  //  try KeyBinding parse slurp(term.getDefaultBindings)
+  //  catch { case _: Exception => Nil }
+  
   private def term = consoleReader.getTerminal()
   def reset() = term.reset()
   def init()  = term.init()
